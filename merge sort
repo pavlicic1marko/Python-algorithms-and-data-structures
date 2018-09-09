@@ -1,0 +1,27 @@
+def merge(left,right):
+    merged=[]
+    leftindex=0
+    rightindex=0
+    while True:
+        if rightindex >= len(right):
+            return merged + left [leftindex:]
+        elif leftindex >= len(left):
+            return merged + right [rightindex:]
+        elif left[leftindex] < right[rightindex]:
+            merged.append(left[leftindex])
+            leftindex +=1
+        else:
+            merged.append(right[rightindex])
+            rightindex +=1
+            
+def mergesort(ls):
+    if len (ls) <= 1:
+        return ls 
+    else:
+        midindex= int(len(ls)/2)
+        left = mergesort(ls[:midindex])
+        right = mergesort(ls[midindex:])
+        return merge(left, right)
+if __name__ == "__main__":
+    ls=[333,444,22,1]
+    mergesort(ls)
