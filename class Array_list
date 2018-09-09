@@ -1,0 +1,23 @@
+class Array_list (object):
+    def__init__(self):
+        init_size=10
+        self.array=[None]*10
+        self.listlenght=0
+        self.arraylenght=Init_size
+        
+    def append(self, item):
+        if self.list == self.arraylenght:
+            self.array += [None] * self.arraylenght
+            self.arraylenghth*=2
+        self.array[self.listlength]=item
+        self.listlength+=1
+        
+    def etItem(self,idx):
+        if idx >= self.listlength:
+            raise Exception('index out of bounds')
+        return self.array[idx]
+    
+    def setItem(self, idx , item):
+        if idx >= self.listlength:
+            raise Esception('index out of bounds')
+        self.array[idx]=item
