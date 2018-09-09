@@ -1,0 +1,16 @@
+def quicksort(ls):
+    if len(ls) <=1:
+        return ls
+    else:
+        pivot=ls[-1]
+        rest=ls[:-1]
+        left=[]
+        right=[]
+    for i in rest:
+        if i < pivot:
+            left.append(i)
+        else:
+            right.append(i)
+    left=quicksort(left)
+    right=quicksort(right)
+    return left +[pivot] + right
