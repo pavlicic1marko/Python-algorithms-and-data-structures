@@ -1,0 +1,10 @@
+array="32 34 453 5345 5 3453 445 6546"
+ls = array.split(" ")
+value = integers.split(" ")
+solution = ['-1'] * len(value)
+for n in range(len(solution)):
+    for i in range(len(ls)):
+        if ls[i] == value[n]:
+            solution[n] = str(i + 1)
+
+print(' '.join(solution))
