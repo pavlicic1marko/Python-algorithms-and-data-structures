@@ -1,0 +1,5 @@
+def HF(string):
+  val=0
+  for letter in string:
+    val+=ord(letter)
+  return val % 10
