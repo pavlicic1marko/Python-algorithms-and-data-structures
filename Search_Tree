@@ -1,0 +1,79 @@
+class Search_tree():
+    def __init__(self, key=None):
+        self.headnumber = key
+        self.leftlink = None
+        self.rightlink = None
+    def append(self, number):
+        if self.headnumber == None:
+            self.headnumber = number
+
+        else:
+            xx = self.headnumber
+            yy = self
+            while xx:
+
+                if number > xx:
+                    if yy.rightlink == None:
+                        yy.rightlink = Search_tree(number)
+                        break
+                    else:
+                        xx = yy.rightlink.headnumber
+                        yy = yy.rightlink
+
+                elif number < xx:
+                    if yy.leftlink == None:
+                        yy.leftlink = Search_tree(number)
+                        break
+                    else:
+                        xx = yy.leftlink.headnumber
+                        yy = yy.leftlink
+
+    def does_the_key_exist(self, key):
+        level=1
+        if True:
+            xx = self.headnumber
+            yy = self
+            while xx:
+                if key == xx:
+                    print('ima',key,',na nivou',level)
+                    break
+                if key > xx:
+
+                    if  yy.rightlink == None:
+                        print("nema ",key)
+                        break
+                    xx = yy.rightlink.headnumber
+                    yy = yy.rightlink
+                    level+=1
+                if key < xx:
+
+                    if yy.leftlink == None :
+                        print("nema ",key)
+                        break
+                    xx = yy.leftlink.headnumber
+                    yy = yy.leftlink
+                    level+=1
+
+
+mojtree = Search_tree()
+mojtree.append(100)
+mojtree.append(11)
+mojtree.append(111)
+mojtree.append(1111)
+mojtree.append(101)
+mojtree.append(103)
+mojtree.append(102)
+mojtree.append(105)
+mojtree.append(33)
+
+mojtree.does_the_key_exist(100)
+
+mojtree.does_the_key_exist(66)
+mojtree.does_the_key_exist(1222)
+mojtree.does_the_key_exist(6)
+mojtree.does_the_key_exist(11)
+mojtree.does_the_key_exist(101)
+mojtree.does_the_key_exist(103)
+mojtree.does_the_key_exist(105)
+mojtree.does_the_key_exist(33)
+mojtree.does_the_key_exist(333)
