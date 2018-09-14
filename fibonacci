@@ -1,0 +1,13 @@
+x=int(input("unesi pozitivam broj",))
+def fibonacci(n):
+    assert n>0
+    a=[0,1]
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        for i in range(n):
+            a.append(a[i]+a[i+1])
+        print(a[i])
+fibonacci(x)
