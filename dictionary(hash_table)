@@ -1,0 +1,58 @@
+class Hash_map():
+    def __init__(self):
+        self.dict_map = [None] * 10  # because we use mod 10
+    def hashing_f(argument):
+        val = 0
+        if isinstance(argument, int):
+            return argument % 10
+        elif isinstance(argument, str):
+            for letter in argument:
+                val += ord(letter)
+            return val % 10
+        elif isinstance(argument, tuple):
+            argument 1 =str(argument)
+            for letter in argument1:
+                val += ord(letter)
+            return val % 10
+        else:
+            raise ValueError("mutable object as key")
+
+    def add_key_value(self ,key ,value)  :  # append
+        key_hashed_valu e= Hash_map.hashing_f(key)
+        if self.dict_map[key_hashed_value ]= =None:
+            self.dict_map[key_hashed_value ] =[[key, value]]
+        else:
+            for key_value in self.dict_map[key_hashed_value]:
+                if key_value[0 ]= =key:
+                    key_value[1 ] =value
+                    break
+                self.dict_map[key_hashed_value].append([key ,value])
+
+    def fid_value_of_a_key(self ,key):
+        key_hashed_valu e= Hash_map.hashing_f(key)
+        if self.dict_map[key_hashed_value ]= =None:
+            print("no key")
+        else:
+            for key_value in self.dict_map[key_hashed_value]:
+                if key_value[0 ]= =key:
+                    print(key_value[1])
+
+    def delete_key_value(self ,key):
+        key_hashed_valu e= Hash_map.hashing_f(key)
+        if self.dict_map[key_hashed_value ]= =None:
+            return False
+        for key_value in self.dict_map[key_hashed_value]:
+            coun t =0
+            if key_value[0 ]= =key:
+                del self.dict_map[key_hashed_value][count]
+                coun t+ =1 d=Hash _map()
+d.add_key_value(11,"dd" )
+d.add_key_value(12,"aap le")
+d.add_key_value(21,"aap le")
+d.add_key_value(15,"sub zero")
+d.add_key_value((1,2,3) ," sub zero")
+
+d.add_key_value("12","aap le")
+# d.add_key_value([],"aaple")
+d.fid_value_of_a_key(15)
+d.delete_key_value(15)
