@@ -1,0 +1,11 @@
+a=[[[[]],[]],[[],[[[[]]]]]]
+def search_tree_depth(tree):
+    if bool(tree) == False:
+        return 0
+    elif len(tree)==2:
+        solution = max(search_tree_depth(tree[0]),search_tree_depth(tree[1])) +1
+        return solution
+    elif len(tree)==1:
+        solution =search_tree_depth(tree[0])+1
+        return solution
+print(search_tree_depth(a))
